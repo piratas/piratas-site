@@ -1,0 +1,3 @@
+[29-Aug-2016 16:12:08 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/s70348/public_html/partidopirata/wp-content/themes/piratenkleider/index.php on line 1
+[02-Sep-2016 07:03:28 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/s70348/public_html/partidopirata/wp-content/themes/piratenkleider/index.php on line 1
+[24-Sep-2016 14:02:26 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/s70348/public_html/partidopirata/wp-content/themes/piratenkleider/index.php on line 1

@@ -1,0 +1,159 @@
+/**
+ * "Yet Another Multicolumn Layout" - YAML CSS Framework
+ *
+ * default print stylesheet
+ *
+ * @copyright       Copyright 2005-2012, Dirk Jesse
+ * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-CDL (http://www.yaml.de/license.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @lastmodified    2012/10/16 $
+ */
+
+
+@media print {
+	/**
+	* @section basic layout preparation
+	*/
+
+	/* (en) change font size unit to [pt] - avoids problems with [px] in Gecko based browsers  	*/
+	/* (de) Wechsel der der Schriftgrößen-Maßheinheit zu [pt] - Probleme mit [px] in Gecko-Browsern vermeiden */
+	body {
+		font-size: 10pt;
+		padding: 0 5px;
+	}
+
+	/* (en) Hide unneeded container of the screenlayout in print layout */
+	/* (de) Für den Druck nicht benötigte Container des Layouts abschalten */
+	nav,
+	.ym-searchform {
+		display:none;
+	}
+
+	/*------------------------------------------------------------------------------------------------------*/
+
+	/* (en) Avoid page breaks right after headings */
+	/* (de) Vermeidung von Seitenumbrüchen direkt nach einer Überschrift */
+	h1,h2,h3,h4,h5,h6 {
+		page-break-after:avoid;
+	}
+
+	/*------------------------------------------------------------------------------------------------------*/
+
+	/* (en) optional output of acronyms and abbreviations*/
+	/* (de) optionale Ausgabe von Auszeichnung von Abkürzungen */
+
+	
+	abbr[title]:after,
+	acronym[title]:after {
+		content:'(' attr(title) ')';
+	}
+	
+
+	/*-----------------------------------------------------------------------------------------------------*/
+	.content-primary .post .post-entry a[href]:after {
+		content: " <URL: "attr(href) ">";
+		color:#444;
+		background:inherit;
+		font-style:italic;
+	}
+	.post-info a[href]:after,
+        .post-meta a[href]:after,
+        .post-comments a[href]:after,
+        .post-title h2 a[href]:after,
+        .tagcloud a[href]:after, 
+        .content .content-aside a[href]:after {
+		content:"";
+	}
+        .teaser,	
+	.breadcrumbs, 
+        .newsletter,
+        .nav-top,
+        .nav-main, 
+        .flexslider,
+        .sticker, 
+        .symbolbild,
+	.startpage-widget-area, 
+	.switchon, .switchoff,
+	.content-primary .post-nav, 	
+	#socialmedia_iconbar,
+        #respond {
+            display: none;
+        }
+        .header {
+            background: white !important;
+	    background-image: none !important;
+            border-bottom: 1px solid #000;
+            margin: 0;
+            padding: 10px;
+	    position: relative;
+	    display: block;
+	    float: none;
+	    height: auto;
+	    width: auto;
+        }
+        .header .branding {
+            margin: 0;
+            padding: 0;
+            height: auto;
+	    float: none;
+	    display: block;
+        }
+	.row {
+	    max-width: inherit;
+	    margin: 0;
+	    padding: 0;
+	    display: inherit;
+	    position: relative;
+	}
+	.content, 
+        .content-primary,
+	.content-aside,
+        .content-aside .skin {
+             width: 100%;
+	     margin: 0;
+	     position: relative;
+	     display: block;
+	     float: none;
+	     background-image: none;
+	     background-color: white;
+	     height: auto;
+	     min-height:  inherit; 
+         }
+	 .post {
+	     position: relative;
+	 }
+	 .section {
+	     padding: 0;
+	 }
+
+        .post-comments ol li .reply {
+            display: none;
+        }
+            
+        .footer  { 
+                color: #999; 
+                text-align: center; 
+                font-size: 10pt;                 
+                width: 100%;
+		border-top: 1px solid #CCC; 
+		position: relative;
+		background-image: none;
+	        background-color: #eee;
+          }
+	  .footer .row {
+	      background-image: none;
+	        background-color: #eee;
+	  }
+	  .first-footer-widget-area, 
+	  .second-footer-widget-area {
+	      display: block;
+	      float: none;
+	      width: 100%;
+	  }
+	  .footer a {
+	      color: black;
+	      background: #eee;	      
+	  }
+}
