@@ -11,11 +11,6 @@ services:
 #      - "43306:3306"
     env_file:
       - "./mariadb.env"
-    environment:
-      MYSQL_ROOT_PASSWORD: piratas
-      MYSQL_DATABASE: piratas
-      MYSQL_USER: piratas
-      MYSQL_PASSWORD: piratas
   wordpress:
     depends_on:
       - mariadb
