@@ -5,15 +5,12 @@ services:
     command: mysqld --innodb-buffer-pool-size=64M
     volumes:
       - "./mariadb:/var/lib/mysql"
-      - "./dump.sql:/tmp/dump.sql"
+#      - "./dump.sql:/tmp/dump.sql"
     restart: always
-    ports:
-      - "43306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: piratas
-      MYSQL_DATABASE: piratas
-      MYSQL_USER: piratas
-      MYSQL_PASSWORD: piratas
+#    ports:
+#      - "43306:3306"
+    env_file:
+      - ./mariadb.env
   wordpress:
     depends_on:
       - mariadb
@@ -30,9 +27,5 @@ services:
       - "42080:80"
       - "42443:443"
     restart: always
-    environment:
-      WORDPRESS_DB_HOST: mariadb:3306
-      WORDPRESS_DB_NAME: piratas
-      WORDPRESS_DB_USER: piratas
-      WORDPRESS_DB_PASSWORD: piratas
-
+    env_file:
+      - ./wordpress.env
